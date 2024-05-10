@@ -12,8 +12,8 @@ backend to start: npm start
 
 tech stack:
 Reactjs
-Expressjs
+Expressjs (port: 8081)
 TailwindCss
 MaterialUI
 Cors
-MySQL
+MySQL (port: 3306)
