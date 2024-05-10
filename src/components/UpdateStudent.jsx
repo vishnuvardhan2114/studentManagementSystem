@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const UpdateStudent = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
   useEffect(() => {
     axios
       .get(`http://localhost:8081/read/${id}`)
