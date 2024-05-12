@@ -44,16 +44,16 @@ app.post("/students", (req, res) => {
     }
   );
 });
-// Read the existing student
+// Read the existing student for Updating the student
 app.get("/read/:id", (req, res) => {
   const id = req.params.id;
   const sql = "SELECT * FROM students WHERE student_id =?";
   db.query(sql, [id], (err, result) => {
     if (err) {
       console.error("Error querying the database:", err);
-      return res.json({ Message: "Error inside server" });
+      return res.status(500).json({ Message: "Error inside server" });
     }
-    return res.json(result);
+    return res.status(200).json(result);
   });
 });
 // UPDATE the existing student
