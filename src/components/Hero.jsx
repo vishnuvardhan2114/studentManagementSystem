@@ -131,12 +131,16 @@ const Hero = () => {
               Are you sure you want to delete
             </DialogContentText>
           </DialogContent>
-          <DialogActions>
+          <DialogActions style={{ marginTop: "-10px" }}>
             <Button
               sx={{
                 backgroundColor: "#C4C4C4",
-                width: "72%",
+                width: "75%",
                 color: "white",
+                "&:hover": {
+                  backgroundColor: "white",
+                  color: "black",
+                },
               }}
               onClick={handleClose}
               color="primary"
@@ -146,8 +150,12 @@ const Hero = () => {
             <Button
               sx={{
                 backgroundColor: "#C4C4C4",
-                width: "72%",
+                width: "75%",
                 color: "white",
+                "&:hover": {
+                  backgroundColor: "white",
+                  color: "black",
+                },
               }}
               onClick={confirmDelete}
               color="primary"
