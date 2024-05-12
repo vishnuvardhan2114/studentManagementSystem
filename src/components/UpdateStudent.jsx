@@ -29,7 +29,7 @@ const UpdateStudent = () => {
         }
       })
       .catch((err) => {
-        console.log("Error fetching data:", err);
+        console.log(err);
       });
   }, []);
 
