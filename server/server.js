@@ -28,12 +28,13 @@ app.get("/", (req, res) => {
 
 // POST a new student
 app.post("/students", (req, res) => {
-  const { first_name, last_name, location, email, dob, education } = req.body;
+  const { first_name, last_name, location, email, dob, education, about } =
+    req.body;
   const sql =
-    "INSERT INTO students (first_name, last_name, location, email, dob, education) VALUES (?, ?, ?, ?, ?, ?)";
+    "INSERT INTO students (first_name, last_name, location, email, dob, education, about) VALUES (?, ?, ?, ?, ?, ?, ?)";
   db.query(
     sql,
-    [first_name, last_name, location, email, dob, education],
+    [first_name, last_name, location, email, dob, education, about],
     (err, result) => {
       if (err) {
         console.error("Error creating student:", err);
@@ -44,6 +45,7 @@ app.post("/students", (req, res) => {
     }
   );
 });
+
 // Read the existing student for Updating the student
 app.get("/read/:id", (req, res) => {
   const id = req.params.id;
