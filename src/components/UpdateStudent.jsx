@@ -25,6 +25,7 @@ const UpdateStudent = () => {
             dob: studentData.dob || "",
             education: studentData.education || "",
             location: studentData.location || "",
+            about: studentData.about || "",
           });
         }
       })
@@ -40,6 +41,7 @@ const UpdateStudent = () => {
     email: "",
     dob: "",
     education: "",
+    about: "",
   });
 
   const handleInput = (e) => {
@@ -143,7 +145,12 @@ const UpdateStudent = () => {
               About <span className="pl-10">:</span>
             </label>
             <div className="flex items-center ">
-              <textarea className="border-[2px] w-[380px] h-[250px] pl-3 pt-3 ml-6 resize-none"></textarea>
+              <textarea
+                className="border-[2px] w-[380px] h-[250px] pl-3 pt-3 ml-6 resize-none"
+                name="about"
+                value={values.about}
+                onChange={handleInput}
+              ></textarea>
             </div>
           </div>
         </form>

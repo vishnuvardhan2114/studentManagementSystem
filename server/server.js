@@ -28,12 +28,13 @@ app.get("/", (req, res) => {
 
 // POST a new student
 app.post("/students", (req, res) => {
-  const { first_name, last_name, location, email, dob, education } = req.body;
+  const { first_name, last_name, location, email, dob, education, about } =
+    req.body;
   const sql =
-    "INSERT INTO students (first_name, last_name, location, email, dob, education) VALUES (?, ?, ?, ?, ?, ?)";
+    "INSERT INTO students (first_name, last_name, location, email, dob, education,about) VALUES (?, ?, ?, ?, ?, ?)";
   db.query(
     sql,
-    [first_name, last_name, location, email, dob, education],
+    [first_name, last_name, location, email, dob, education, about],
     (err, result) => {
       if (err) {
         console.error("Error creating student:", err);
@@ -59,12 +60,13 @@ app.get("/read/:id", (req, res) => {
 // UPDATE the existing student
 app.put("/update/:id", (req, res) => {
   const sql =
-    "UPDATE students SET `first_name` = ?, `last_name` = ?, `email` = ?, `location` = ?, `dob` = ?, `education` = ? WHERE student_id = ?";
+    "UPDATE students SET `first_name` = ?, `last_name` = ?, `email` = ?, `location` = ?, `dob` = ?, `education` = ?, `about`= ? WHERE student_id = ?";
   const id = req.params.id;
-  const { first_name, last_name, location, email, dob, education } = req.body;
+  const { first_name, last_name, location, email, dob, education, about } =
+    req.body;
   db.query(
     sql,
-    [first_name, last_name, email, location, dob, education, id],
+    [first_name, last_name, email, location, dob, education, about, id],
     (err, result) => {
       if (err) {
         console.error("Error updating student:", err);

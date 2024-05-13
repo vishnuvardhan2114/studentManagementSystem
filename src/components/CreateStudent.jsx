@@ -11,6 +11,7 @@ const CreateStudent = () => {
     email: "",
     dob: "",
     education: "",
+    about: "",
   });
   const navigate = useNavigate();
   const handleInput = (e) => {
@@ -108,7 +109,12 @@ const CreateStudent = () => {
               About <span className="pl-10">:</span>
             </label>
             <div className="flex items-center ">
-              <textarea className="border-[2px] w-[380px] h-[250px] pl-3 pt-3 ml-6 resize-none"></textarea>
+              <textarea
+                className="border-[2px] w-[380px] h-[250px] pl-3 pt-3 ml-6 resize-none"
+                name="about"
+                value={student.about}
+                onChange={handleInput}
+              ></textarea>
             </div>
           </div>
         </form>
