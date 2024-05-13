@@ -28,13 +28,12 @@ app.get("/", (req, res) => {
 
 // POST a new student
 app.post("/students", (req, res) => {
-  const { first_name, last_name, location, email, dob, education, about } =
-    req.body;
+  const { first_name, last_name, location, email, dob, education } = req.body;
   const sql =
-    "INSERT INTO students (first_name, last_name, location, email, dob, education,about) VALUES (?, ?, ?, ?, ?, ?)";
+    "INSERT INTO students (first_name, last_name, location, email, dob, education) VALUES (?, ?, ?, ?, ?, ?)";
   db.query(
     sql,
-    [first_name, last_name, location, email, dob, education, about],
+    [first_name, last_name, location, email, dob, education],
     (err, result) => {
       if (err) {
         console.error("Error creating student:", err);
